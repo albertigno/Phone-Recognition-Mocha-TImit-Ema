@@ -14,9 +14,10 @@ for i in range(len(lines)):
 		for q in lines[i]:
 			if (q not in "1234567890 ") and (q not in "\n") and (q not in "\r") and (q not in "\t"):
 				pal+=q
-		fonemas.append(pal)		
+		if(pal!=""):
+			fonemas.append(pal)		
 
-fonemas=list(set(fonemas))
+fonemas=list(set(fonemas)) #descarta los fonemas repetidos y ordena el resto en una lista
 for i in range(len(fonemas)):
 	salida.write(fonemas[i]+"\n")
 	dicti.write(fonemas[i]+"\t"+fonemas[i]+"\n")
